@@ -17,7 +17,7 @@ def reduce(arg, startp = nil)
     i = 1
   end
   while i < arg.length
-    total = yield(accum, s[i])
+    total = yield(total, s[i])
     i += 1
   end
 return total
