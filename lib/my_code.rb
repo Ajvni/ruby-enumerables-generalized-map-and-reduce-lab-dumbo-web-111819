@@ -5,5 +5,20 @@ def map(arg)
     new.push(yield(arg[i]))
     i += 1
   end
-  new
+return new
+end
+
+def reduce(arg, startp = nil)
+  if startp
+    total = startp
+    i = 0
+  else
+    total = arg[0]
+    i = 1
+  end
+  while i < arg.length
+    total = yield(accum, s[i])
+    i += 1
+  end
+return total
 end
